@@ -37,8 +37,8 @@
 	{
 		global $dbh;
 
-		$sql = "UPDATE grade SET grade = '$grade'
-			WHERE sid='$sid' AND classid='$classid'";
+		$sql = "UPDATE grade SET grade = ':grade'
+			WHERE sid=':sid' AND classid=':classid'";
 
 		$stmt = $dbh->prepare($sql);
 		$stmt->bindParam(':grade',$grade);

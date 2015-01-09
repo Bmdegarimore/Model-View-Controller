@@ -10,7 +10,7 @@
 			$classid = $row['classid'];
 			$abbrev = $row['abbrev'];
 			$grade = $row['grade'];
-			$edit = "<a href='?action=edit&sid=$sid&classid=$classid>edit</a>";
+			$edit = "<a href='?action=edit&sid=$sid&classid$classid'>edit</a>";
 
 			echo "<tr><td>$name</td><td>$abbrev</td><td>$grade</td><td>$edit</td></tr>";
 		}
