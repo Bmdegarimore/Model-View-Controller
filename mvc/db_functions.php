@@ -48,3 +48,17 @@
 		$stmt->execute();
 		
 	}
+	function deleteGrade($sid,$classid,$grade)
+	{
+	global $dbh;
+
+		$sql = "DELETE FROM grade WHERE grade = ':grade'
+			WHERE sid=':sid' AND classid=':classid'";
+
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(':grade',$grade);
+		$stmt->bindParam(':sid',$sid);
+		$stmt->bindParam(':classid',$classid);
+
+		$stmt->execute();
+	}
